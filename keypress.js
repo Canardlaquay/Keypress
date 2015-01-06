@@ -276,7 +276,7 @@ Combo options available and their defaults:
             should_prepend = false;
           }
         }
-      }
+      }i
       if (should_prepend) {
         this._active_combos.unshift(combo);
       }
@@ -550,6 +550,14 @@ Combo options available and their defaults:
         if (result) {
           return this._fire("keydown", combo, e, is_autorepeat);
         }
+      }
+      else {
+          if (combo.is_counting && typeof combo.on_keydown === "function") {
+          combo.count += 1;
+          }
+          if (result) {
+            return this._fire("keydown", combo, e, is_autorepeat);
+          }
       }
     };
 
