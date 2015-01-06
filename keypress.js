@@ -276,7 +276,7 @@ Combo options available and their defaults:
             should_prepend = false;
           }
         }
-      }i
+      }
       if (should_prepend) {
         this._active_combos.unshift(combo);
       }
